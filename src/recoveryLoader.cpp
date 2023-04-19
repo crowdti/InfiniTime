@@ -28,7 +28,6 @@ Pinetime::Logging::NrfLogger logger;
 Pinetime::Logging::DummyLogger logger;
 #endif
 
-
 static constexpr uint8_t displayWidth = 240;
 static constexpr uint8_t displayHeight = 240;
 static constexpr uint8_t bytesPerPixel = 2;
@@ -82,7 +81,8 @@ void RefreshWatchdog() {
 }
 
 uint8_t displayBuffer[displayWidth * bytesPerPixel];
-void Process(void* instance) {
+
+void Process(void* /*instance*/) {
   RefreshWatchdog();
   APP_GPIOTE_INIT(2);
 
